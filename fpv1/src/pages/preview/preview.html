@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Preview Photo
+    </ion-title>
+
+    <ion-buttons end>
+     <button ion-button icon-only (click)="presendPhotoOptions()">
+      <ion-icon name="aperture"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+ <ion-slides zoom="">
+ <ion-slide  *ngFor="let item of images">
+    <div class="swiper-zoom-container">
+      <img [src]="item.src">
+    </div>
+  </ion-slide>
+</ion-slides>
+</ion-content>

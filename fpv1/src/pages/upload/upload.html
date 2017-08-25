@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Upload
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<br />
+<div class="file-upload center">
+    <label for="upload" class="file-upload__label">Choos a file</label>
+    <input  (change)="fileChange($event)" id="upload" class="file-upload__input" type="file" name="file" ccept=".jpg,.png,.gif,.jpeg,.mp4">
+</div>
+
+
+</ion-content>

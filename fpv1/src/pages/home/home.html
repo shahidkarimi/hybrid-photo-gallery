@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <!--<button ion-button>
+        <ion-icon name="contact"></ion-icon>
+      </button>-->
+
+      <button (click)="moveBackOne()" ion-button *ngIf="this.appglobals.current_directory > 0">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+
+
+      <button ion-button menuToggle *ngIf="this.appglobals.current_directory == 0">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+
+    <ion-title>
+      Title
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="presentActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-navbar *navbar>
+          <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Lists</ion-title>
+        </ion-navbar>
+<ion-content padding>
+<div>{{debugText1}}</div>
+    <div class="row responsive-md">
+
+      <ng-container *ngFor="let item of images; let i = index">
+
+        <div class="row" style="width:100%" *ngIf="i % GRID_COLUMN===0">
+
+          <div class="col col-25 g-grid-col" *ngFor="let t of createRange(GRID_COLUMN);let _index=index">
+            <img (click)="openMedia(images[i+_index])" *ngIf="i+_index<images.length" src="{{images[i+_index].icon_path}}"  />
+            <div class="da-bottom-w" *ngIf="i+_index<images.length">{{images[i+_index].title}}</div>
+          </div>
+          
+        </div>
+
+      </ng-container>
+
+    </div>
+</ion-content>
